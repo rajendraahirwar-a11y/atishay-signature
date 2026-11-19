@@ -12,7 +12,6 @@
       --primary: #0a2240;
       --primary-light: #163761;
       --accent: #38b6ff;
-      --accent-soft: #e1f2fa;
       --bg: #f4f7fb;
       --card-bg: #ffffff;
       --text-main: #1e293b;
@@ -21,217 +20,112 @@
       --success: #10b981;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
-      line-height: 1.5;
-      padding: 30px 20px;
+      padding: 30px 15px;
     }
-
-    .container {
-      max-width: 950px;
-      margin: 0 auto;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    header h1 {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 6px;
-      letter-spacing: -0.5px;
-    }
-
-    header p {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .layout {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
+    .container { max-width: 920px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 25px; }
+    header h1 { font-size: 24px; color: var(--primary); font-weight: 700; }
+    header p { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
     .card {
       background: var(--card-bg);
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 4px 18px rgba(10, 34, 64, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 4px 14px rgba(10, 34, 64, 0.05);
       border: 1px solid var(--border);
+      margin-bottom: 22px;
     }
-
     .card-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-
     .form-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
+      gap: 15px;
     }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #334155;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="url"] {
-      padding: 10px 14px;
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    label { font-size: 13px; font-weight: 600; color: #334155; }
+    input[type="text"], input[type="email"] {
+      padding: 9px 12px;
       border: 1.5px solid var(--border);
       border-radius: 8px;
       font-size: 14px;
       font-family: inherit;
-      color: var(--text-main);
-      transition: all 0.2s ease;
       background: #fafafa;
     }
-
     input:focus {
       outline: none;
       border-color: var(--accent);
       background: #ffffff;
       box-shadow: 0 0 0 3px rgba(56, 182, 255, 0.2);
     }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
     button {
       cursor: pointer;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       border-radius: 8px;
-      padding: 11px 20px;
+      padding: 10px 18px;
       border: none;
-      transition: all 0.2s ease;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
+      gap: 6px;
+      transition: all 0.2s ease;
     }
+    .btn-primary { background: var(--primary); color: #ffffff; }
+    .btn-primary:hover { background: var(--primary-light); }
+    .btn-accent { background: #0284c7; color: #ffffff; }
+    .btn-accent:hover { background: #0369a1; }
+    .btn-secondary { background: #f1f5f9; color: #334155; border: 1px solid var(--border); }
+    .btn-secondary:hover { background: #e2e8f0; }
 
-    .btn-primary {
-      background: var(--primary);
-      color: #ffffff;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-light);
-      transform: translateY(-1px);
-    }
-
-    .btn-accent {
-      background: #0284c7;
-      color: #ffffff;
-    }
-
-    .btn-accent:hover {
-      background: #0369a1;
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: #f1f5f9;
-      color: #334155;
-      border: 1px solid var(--border);
-    }
-
-    .btn-secondary:hover {
-      background: #e2e8f0;
-    }
-
-    /* Preview Box */
-    .preview-wrapper {
+    .preview-box {
       background: #ffffff;
       border: 2px dashed #cbd5e1;
-      border-radius: 10px;
-      padding: 24px;
+      border-radius: 8px;
+      padding: 20px;
       overflow-x: auto;
-      margin-bottom: 20px;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+      margin-bottom: 15px;
     }
-
-    .instructions-box {
-      margin-top: 15px;
+    .instructions {
       background: #f8fafc;
       border-left: 4px solid var(--accent);
       padding: 12px 16px;
       border-radius: 0 8px 8px 0;
       font-size: 13px;
       color: #334155;
+      margin-top: 15px;
     }
+    .instructions ol { padding-left: 18px; margin-top: 5px; }
 
-    .instructions-box ol {
-      padding-left: 20px;
-      margin-top: 6px;
-    }
-
-    .instructions-box li {
-      margin-bottom: 4px;
-    }
-
-    /* Toast Notification */
     #toast {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 20px;
+      right: 20px;
       background: #0f172a;
       color: #ffffff;
-      padding: 12px 20px;
+      padding: 12px 18px;
       border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    #toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    #toast.success {
+      font-size: 13px;
       border-left: 4px solid var(--success);
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 9999;
     }
+    #toast.show { transform: translateY(0); opacity: 1; }
   </style>
 </head>
 <body>
@@ -242,95 +136,69 @@
     <p>Official Email Signature Generator & Previewer</p>
   </header>
 
-  <div class="layout">
-    <!-- Form Card -->
-    <div class="card">
-      <div class="card-title">
-        <span>✏️</span> Enter Employee Details
+  <!-- Input Form -->
+  <div class="card">
+    <div class="card-title"><span>✏️</span> Enter Details</div>
+    <form id="sigForm" onsubmit="event.preventDefault(); renderSignature();">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Employee Name *</label>
+          <input type="text" id="empName" placeholder="e.g. Rajendra Ahirwar" value="Rajendra Ahirwar" required oninput="renderSignature()">
+        </div>
+        <div class="form-group">
+          <label>Designation *</label>
+          <input type="text" id="empDesignation" placeholder="e.g. Data Management Executive" value="Data Management Executive" required oninput="renderSignature()">
+        </div>
+        <div class="form-group">
+          <label>Mobile Number *</label>
+          <input type="text" id="empMobile" placeholder="e.g. 6232946680" value="6232946680" required oninput="renderSignature()">
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="empEmail" placeholder="e.g. rajendra.ahirwar@atishay.com" value="rajendra.ahirwar@atishay.com" required oninput="renderSignature()">
+        </div>
+        <div class="form-group">
+          <label>Website URL</label>
+          <input type="text" id="empWebsite" value="www.atishay.com" oninput="renderSignature()">
+        </div>
+        <div class="form-group">
+          <label>Logo Image URL</label>
+          <input type="text" id="empLogo" value="https://dimgrey-eel-694251.hostingersite.com/wp-content/uploads/2024/11/cropped-logo.png" oninput="renderSignature()">
+        </div>
       </div>
 
-      <form id="signatureForm" onsubmit="event.preventDefault(); updateSignature();">
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="empName">Full Name *</label>
-            <input type="text" id="empName" placeholder="e.g. Rahul Sharma" value="Rahul Sharma" required oninput="updateSignature()">
-          </div>
+      <div class="btn-row">
+        <button type="submit" class="btn-primary"><span>✨</span> Generate Signature</button>
+        <button type="button" class="btn-secondary" onclick="resetForm()"><span>🔄</span> Reset</button>
+      </div>
+    </form>
+  </div>
 
-          <div class="form-group">
-            <label for="empDesignation">Designation *</label>
-            <input type="text" id="empDesignation" placeholder="e.g. Senior Project Manager" value="Senior Project Manager" required oninput="updateSignature()">
-          </div>
-
-          <div class="form-group">
-            <label for="empMobile">Mobile Number *</label>
-            <input type="text" id="empMobile" placeholder="e.g. 9876543210" value="9876543210" required oninput="updateSignature()">
-          </div>
-
-          <div class="form-group">
-            <label for="empEmail">Email Address *</label>
-            <input type="email" id="empEmail" placeholder="e.g. rahul.sharma@atishay.com" value="rahul.sharma@atishay.com" required oninput="updateSignature()">
-          </div>
-
-          <div class="form-group">
-            <label for="empWebsite">Website URL</label>
-            <input type="text" id="empWebsite" placeholder="e.g. www.atishay.com" value="www.atishay.com" oninput="updateSignature()">
-          </div>
-
-          <div class="form-group">
-            <label for="empLogo">Logo Image URL</label>
-            <input type="url" id="empLogo" value="https://dimgrey-eel-694251.hostingersite.com/wp-content/uploads/2024/11/cropped-logo.png" oninput="updateSignature()">
-          </div>
-        </div>
-
-        <div class="btn-row">
-          <button type="submit" class="btn-primary">
-            <span>✨</span> Generate Signature
-          </button>
-          <button type="button" class="btn-secondary" onclick="resetForm()">
-            <span>🔄</span> Reset
-          </button>
-        </div>
-      </form>
+  <!-- Signature Output -->
+  <div class="card">
+    <div class="card-title"><span>👁️</span> Live Signature Preview</div>
+    
+    <div class="preview-box">
+      <div id="signatureContainer"></div>
     </div>
 
-    <!-- Live Preview Card -->
-    <div class="card" id="outputCard">
-      <div class="card-title" style="justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span>👁️</span> Live Signature Preview
-        </div>
-        <div style="font-size: 12px; font-weight: normal; color: var(--text-muted);">
-          Ready to copy & paste into email clients
-        </div>
-      </div>
+    <div class="btn-row">
+      <button type="button" class="btn-accent" onclick="copyFormattedSignature()">
+        <span>📋</span> Copy Formatted Signature (For Gmail / Outlook)
+      </button>
+      <button type="button" class="btn-secondary" onclick="copyHtmlSource()">
+        <span>💻</span> Copy HTML Code
+      </button>
+    </div>
 
-      <!-- The Signature HTML Render -->
-      <div class="preview-wrapper">
-        <div id="signatureContainer">
-          <!-- Rendered signature will be inserted here -->
-        </div>
-      </div>
-
-      <!-- Actions -->
-      <div class="btn-row">
-        <button type="button" class="btn-accent" onclick="copyRichTextSignature()">
-          <span>📋</span> Copy Formatted Signature (For Gmail / Outlook)
-        </button>
-        <button type="button" class="btn-secondary" onclick="copyRawHTMLSignature()">
-          <span>💻</span> Copy HTML Code
-        </button>
-      </div>
-
-      <!-- Quick How-To -->
-      <div class="instructions-box">
-        <strong>📌 Gmail me kaise add karein:</strong>
-        <ol>
-          <li>Upar <strong>"Copy Formatted Signature"</strong> button par click karein.</li>
-          <li>Gmail khol kar <strong>Settings (Gear icon ⚙️) &rarr; See all settings &rarr; General tab</strong> par jayein.</li>
-          <li>Neeche scroll karke <strong>Signature</strong> section me <strong>"+ Create new"</strong> karein.</li>
-          <li>Signature box me directly <strong>Paste (Ctrl + V)</strong> karein aur neeche <strong>"Save Changes"</strong> dabayein!</li>
-        </ol>
-      </div>
+    <div class="instructions">
+      <strong>📌 Gmail me kaise lagayein:</strong>
+      <ol>
+        <li>Upar <strong>"Copy Formatted Signature"</strong> button dabayein.</li>
+        <li>Gmail open karein &rarr; <strong>Settings (⚙️) &rarr; See all settings &rarr; General</strong> tab.</li>
+        <li>Neeche scroll karein <strong>Signature</strong> section me <strong>"+ Create new"</strong> karein.</li>
+        <li>Signature text box me directly <strong>Paste (Ctrl + V)</strong> karein aur neeche <strong>Save Changes</strong> dabayein!</li>
+      </ol>
     </div>
   </div>
 </div>
@@ -338,74 +206,69 @@
 <div id="toast"></div>
 
 <script>
-  function formatMobile(val) {
-    val = val.trim();
-    if (!val) return '+91 XXXXXXXXXX';
-    if (val.startsWith('+')) return val;
-    return '+91 ' + val;
+  function formatMobile(v) {
+    v = v.trim();
+    if (!v) return '+91 XXXXXXXXXX';
+    return v.startsWith('+') ? v : '+91 ' + v;
   }
 
   function getSignatureHtml() {
     const name = document.getElementById('empName').value.trim() || '[Employee Name]';
     const designation = document.getElementById('empDesignation').value.trim() || '[Designation]';
-    const rawMobile = document.getElementById('empMobile').value.trim();
-    const mobile = rawMobile ? formatMobile(rawMobile) : '+91 [Mobile Number]';
+    const mobile = formatMobile(document.getElementById('empMobile').value);
     const email = document.getElementById('empEmail').value.trim() || '[Email Address]';
     let website = document.getElementById('empWebsite').value.trim() || 'www.atishay.com';
-    let webLink = website;
-    if (!webLink.startsWith('http://') && !webLink.startsWith('https://')) {
-      webLink = 'https://' + webLink;
-    }
-    const logoUrl = document.getElementById('empLogo').value.trim() || 'https://dimgrey-eel-694251.hostingersite.com/wp-content/uploads/2024/11/cropped-logo.png';
+    let webLink = website.startsWith('http') ? website : 'https://' + website;
+    const logo = document.getElementById('empLogo').value.trim() || 'https://dimgrey-eel-694251.hostingersite.com/wp-content/uploads/2024/11/cropped-logo.png';
 
     return `
-<table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; max-width: 750px; width: 100%; background-color: #ffffff; border-collapse: collapse;">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; max-width: 770px; width: 100%; background-color: #ffffff; border-collapse: collapse;">
   <tr>
     <!-- Left Logo Section -->
-    <td style="width: 140px; text-align: center; vertical-align: middle; padding: 15px 15px 15px 10px; border-right: 2px solid #5bc0de;">
-      <img src="${logoUrl}" alt="ATISHAY" style="width: 150px; height: auto; display: block; margin: 0 auto;" />
+    <td style="width: 135px; text-align: center; vertical-align: middle; padding: 12px 10px; border-right: 2px solid #5bc0de;">
+      <img src="${logo}" alt="ATISHAY" style="width: 140px; height: auto; display: block; margin: 0 auto;" />
     </td>
 
     <!-- Right Details Section -->
-    <td style="padding: 12px 15px 12px 20px; vertical-align: top;">
+    <td style="padding: 10px 12px 10px 18px; vertical-align: top;">
       <!-- Name & Title -->
-      <div style="font-size: 24px; font-weight: bold; color: #0a2240; line-height: 1.2;">${name}</div>
-      <div style="font-size: 15px; color: #333333; margin-top: 4px;">
-        ${designation} <span style="color: #5bc0de; padding: 0 6px;">|</span> <strong style="color: #0a2240; letter-spacing: 0.5px;">ATISHAY LIMITED</strong>
+      <div style="font-size: 23px; font-weight: bold; color: #0a2240; line-height: 1.2;">${name}</div>
+      <div style="font-size: 14.5px; color: #333333; margin-top: 4px;">
+        ${designation} <span style="color: #5bc0de; padding: 0 5px;">|</span> <strong style="color: #0a2240; letter-spacing: 0.5px;">ATISHAY LIMITED</strong>
       </div>
       
       <!-- Tagline -->
-      <div style="font-size: 13.5px; font-style: italic; color: #1a2b49; margin-top: 6px; margin-bottom: 10px;">
+      <div style="font-size: 13px; font-style: italic; color: #1a2b49; margin-top: 5px; margin-bottom: 8px;">
         Advancing Governments with Secure, Scalable, and Innovative IT Solutions
       </div>
 
       <!-- Services Bar -->
-      <table cellpadding="0" cellspacing="0" border="0" style="background-color: #eef6fb; border-radius: 4px; width: 100%; margin-bottom: 10px;">
+      <table cellpadding="0" cellspacing="0" border="0" style="background-color: #eef6fb; border-radius: 4px; width: 100%; margin-bottom: 8px;">
         <tr>
-          <td style="padding: 6px 10px; font-size: 11px; color: #0a2240; font-weight: 600;">
-            &lt;/&gt; IT Projects <span style="color: #88c4e8; padding: 0 6px;">|</span> 
-            &#9881; Artificial Intelligence <span style="color: #88c4e8; padding: 0 6px;">|</span> 
-            &#9783; System Integration <span style="color: #88c4e8; padding: 0 6px;">|</span> 
+          <td style="padding: 5px 8px; font-size: 11px; color: #0a2240; font-weight: 600;">
+            &lt;/&gt; IT Projects <span style="color: #88c4e8; padding: 0 5px;">|</span> 
+            &#9881; Artificial Intelligence <span style="color: #88c4e8; padding: 0 5px;">|</span> 
+            &#9783; System Integration <span style="color: #88c4e8; padding: 0 5px;">|</span> 
             &#9881; Software Development
           </td>
         </tr>
       </table>
 
-      <!-- Contact Details -->
-      <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-bottom: 1.5px solid #5bc0de; padding-bottom: 8px; margin-bottom: 8px;">
+      <!-- Contact Details (1 Single Line) -->
+      <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-bottom: 1.5px solid #5bc0de; padding-bottom: 7px; margin-bottom: 7px;">
         <tr>
-          <td style="font-size: 13.5px; color: #0a2240; font-weight: 600;">
-            <span style="background-color: #e1f2fa; padding: 3px 6px; border-radius: 4px; color: #0077b5;">&#9742;</span> ${mobile}
-            <span style="color: #5bc0de; padding: 0 10px;">|</span>
-            <span style="background-color: #e1f2fa; padding: 3px 6px; border-radius: 4px; color: #0077b5;">&#9993;</span> <a href="mailto:${email}" style="color: #0a2240; text-decoration: none;">${email}</a>
-            <span style="color: #5bc0de; padding: 0 10px;">|</span>
-            <span style="background-color: #e1f2fa; padding: 3px 6px; border-radius: 4px; color: #0077b5;">&#127760;</span> <a href="${webLink}" target="_blank" style="color: #0a2240; text-decoration: none;">${website}</a>
+          <td style="font-size: 12.5px; color: #0a2240; font-weight: 600; white-space: nowrap;">
+            <span style="white-space: nowrap;"><span style="background-color: #e1f2fa; padding: 2px 5px; border-radius: 3px; color: #0077b5;">&#9742;</span> ${mobile}</span>
+            <span style="color: #5bc0de; padding: 0 6px;">|</span>
+            <span style="white-space: nowrap;"><span style="background-color: #e1f2fa; padding: 2px 5px; border-radius: 3px; color: #0077b5;">&#9993;</span> <a href="mailto:${email}" style="color: #0a2240; text-decoration: none;">${email}</a></span>
+            <span style="color: #5bc0de; padding: 0 6px;">|</span>
+            <span style="white-space: nowrap;"><span style="background-color: #e1f2fa; padding: 2px 5px; border-radius: 3px; color: #0077b5;">&#127760;</span> <a href="${webLink}" target="_blank" style="color: #0a2240; text-decoration: none;">${website}</a></span>
           </td>
         </tr>
       </table>
 
       <!-- Addresses -->
-      <div style="font-size: 12px; color: #222222; line-height: 1.6;">
+      <div style="font-size: 11.5px; color: #222222; line-height: 1.5;">
         <div><span style="color: #0077b5; font-weight: bold;">&#128205;</span> <strong>Head Office:</strong> Plot No. 36, Zone-I, Maharana Pratap Nagar, Bhopal – 462011 (MP)</div>
         <div><span style="color: #0077b5; font-weight: bold;">&#128205;</span> <strong>Registered Office:</strong> 14-15 Khatau Building, 44 Bank Street, Fort, Mumbai – 1, Maharashtra, India</div>
       </div>
@@ -414,10 +277,10 @@
 
   <!-- Bottom Navy Blue Cities Banner -->
   <tr>
-    <td colspan="2" style="padding-top: 6px;">
+    <td colspan="2" style="padding-top: 5px;">
       <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; background-color: #0a2240; border-left: 8px solid #38b6ff; border-right: 8px solid #38b6ff;">
         <tr>
-          <td style="text-align: center; padding: 8px 10px; color: #ffffff; font-size: 13px; font-weight: bold; letter-spacing: 1px;">
+          <td style="text-align: center; padding: 7px 10px; color: #ffffff; font-size: 12.5px; font-weight: bold; letter-spacing: 1px;">
             MUMBAI <span style="color: #38b6ff; padding: 0 8px;">|</span> 
             BHOPAL <span style="color: #38b6ff; padding: 0 8px;">|</span> 
             JAIPUR <span style="color: #38b6ff; padding: 0 8px;">|</span> 
@@ -432,84 +295,60 @@
 </table>`.trim();
   }
 
-  function updateSignature() {
-    const container = document.getElementById('signatureContainer');
-    container.innerHTML = getSignatureHtml();
+  function renderSignature() {
+    document.getElementById('signatureContainer').innerHTML = getSignatureHtml();
   }
 
-  function showToast(message) {
-    const toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.className = 'show success';
-    setTimeout(() => {
-      toast.className = '';
-    }, 3500);
+  function notify(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'show';
+    setTimeout(() => { t.className = ''; }, 3500);
   }
 
-  async function copyRichTextSignature() {
+  async function copyFormattedSignature() {
     const container = document.getElementById('signatureContainer');
     const html = container.innerHTML;
     const text = container.innerText;
 
     if (navigator.clipboard && window.ClipboardItem) {
       try {
-        const blobHtml = new Blob([html], { type: 'text/html' });
-        const blobText = new Blob([text], { type: 'text/plain' });
-        const data = [new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText })];
-        await navigator.clipboard.write(data);
-        showToast('✅ Signature Copied! Ab Gmail ya Outlook me jaakar Paste (Ctrl+V) karein.');
+        const item = new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' })
+        });
+        await navigator.clipboard.write([item]);
+        notify('✅ Signature Copied! Ab Gmail me jaakar Paste (Ctrl+V) karein.');
         return;
-      } catch (err) {
-        console.warn('ClipboardItem copy failed, using fallback selection method...', err);
-      }
+      } catch (err) {}
     }
 
-    // Fallback using DOM range selection
     const range = document.createRange();
     range.selectNodeContents(container);
     const sel = window.getSelection();
     sel.removeAllRanges();
     sel.addRange(range);
-
-    try {
-      const successful = document.execCommand('copy');
-      if (successful) {
-        showToast('✅ Signature Copied! Ab Gmail ya Outlook me jaakar Paste (Ctrl+V) karein.');
-      } else {
-        alert('Could not copy automatically. Please select the preview and press Ctrl+C.');
-      }
-    } catch (e) {
-      alert('Could not copy automatically. Please select the preview and press Ctrl+C.');
-    }
+    document.execCommand('copy');
     sel.removeAllRanges();
+    notify('✅ Signature Copied! Ab Gmail me jaakar Paste (Ctrl+V) karein.');
   }
 
-  function copyRawHTMLSignature() {
-    const html = getSignatureHtml();
-    navigator.clipboard.writeText(html).then(() => {
-      showToast('✅ HTML Code copied to clipboard!');
-    }).catch(() => {
-      prompt('Copy the HTML code below:', html);
+  function copyHtmlSource() {
+    navigator.clipboard.writeText(getSignatureHtml()).then(() => {
+      notify('✅ Raw HTML Code clipboard me copy ho gaya!');
     });
   }
 
   function resetForm() {
-    document.getElementById('signatureForm').reset();
-    document.getElementById('empName').value = 'Rahul Sharma';
-    document.getElementById('empDesignation').value = 'Senior Project Manager';
-    document.getElementById('empMobile').value = '9876543210';
-    document.getElementById('empEmail').value = 'rahul.sharma@atishay.com';
+    document.getElementById('empName').value = 'Rajendra Ahirwar';
+    document.getElementById('empDesignation').value = 'Data Management Executive';
+    document.getElementById('empMobile').value = '6232946680';
+    document.getElementById('empEmail').value = 'rajendra.ahirwar@atishay.com';
     document.getElementById('empWebsite').value = 'www.atishay.com';
-    document.getElementById('empLogo').value = 'https://dimgrey-eel-694251.hostingersite.com/wp-content/uploads/2024/11/cropped-logo.png';
-    updateSignature();
-    showToast('Reset to defaults.');
+    renderSignature();
   }
 
-  // Initial render
-  window.addEventListener('DOMContentLoaded', () => {
-    updateSignature();
-  });
+  window.onload = renderSignature;
 </script>
-
 </body>
 </html>
