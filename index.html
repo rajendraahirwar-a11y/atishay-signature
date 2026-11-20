@@ -136,40 +136,40 @@
     <p>Official Email Signature Generator & Previewer</p>
   </header>
 
-  <!-- Input Form -->
+  <!-- Input Form (Blank with Labels) -->
   <div class="card">
     <div class="card-title"><span>✏️</span> Enter Details</div>
     <form id="sigForm" onsubmit="event.preventDefault(); renderSignature();">
       <div class="form-grid">
         <div class="form-group">
-          <label>Employee Name *</label>
-          <input type="text" id="empName" placeholder="e.g. Rajendra Ahirwar" value="Rajendra Ahirwar" required oninput="renderSignature()">
+          <label for="empName">Employee Name *</label>
+          <input type="text" id="empName" placeholder="" required oninput="renderSignature()">
         </div>
         <div class="form-group">
-          <label>Designation *</label>
-          <input type="text" id="empDesignation" placeholder="e.g. Data Management Executive" value="Data Management Executive" required oninput="renderSignature()">
+          <label for="empDesignation">Designation *</label>
+          <input type="text" id="empDesignation" placeholder="" required oninput="renderSignature()">
         </div>
         <div class="form-group">
-          <label>Mobile Number *</label>
-          <input type="text" id="empMobile" placeholder="e.g. 6232946680" value="6232946680" required oninput="renderSignature()">
+          <label for="empMobile">Mobile Number *</label>
+          <input type="text" id="empMobile" placeholder="" required oninput="renderSignature()">
         </div>
         <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" id="empEmail" placeholder="e.g. rajendra.ahirwar@atishay.com" value="rajendra.ahirwar@atishay.com" required oninput="renderSignature()">
+          <label for="empEmail">Email Address *</label>
+          <input type="email" id="empEmail" placeholder="" required oninput="renderSignature()">
         </div>
         <div class="form-group">
-          <label>Website URL</label>
-          <input type="text" id="empWebsite" value="www.atishay.com" oninput="renderSignature()">
+          <label for="empWebsite">Website URL</label>
+          <input type="text" id="empWebsite" placeholder="www.atishay.com (Default)" oninput="renderSignature()">
         </div>
         <div class="form-group">
-          <label>Logo Image URL</label>
-          <input type="text" id="empLogo" value="https://dimgrey-eel-694251.hostingersite.com/wp-content/uploads/2024/11/cropped-logo.png" oninput="renderSignature()">
+          <label for="empLogo">Logo Image URL</label>
+          <input type="text" id="empLogo" placeholder="Leave empty for official logo" oninput="renderSignature()">
         </div>
       </div>
 
       <div class="btn-row">
         <button type="submit" class="btn-primary"><span>✨</span> Generate Signature</button>
-        <button type="button" class="btn-secondary" onclick="resetForm()"><span>🔄</span> Reset</button>
+        <button type="button" class="btn-secondary" onclick="resetForm()"><span>🔄</span> Reset Form</button>
       </div>
     </form>
   </div>
@@ -245,12 +245,12 @@
       <!-- Services Bar -->
       <table cellpadding="0" cellspacing="0" border="0" style="background-color: #eef6fb; border-radius: 4px; width: 100%; margin-bottom: 8px;">
         <tr>
-<td style="padding: 5px 8px; font-size: 11px; color: #0a2240; font-weight: 600;">
-  Information Technology <span style="color: #88c4e8; padding: 0 5px;">|</span> 
-  Artificial Intelligence <span style="color: #88c4e8; padding: 0 5px;">|</span> 
-  Software Development <span style="color: #88c4e8; padding: 0 5px;">|</span> 
-  System Integration
-</td>
+          <td style="padding: 5px 8px; font-size: 11px; color: #0a2240; font-weight: 600;">
+            &lt;/&gt; Information Technology <span style="color: #88c4e8; padding: 0 5px;">|</span> 
+            &#9881; Artificial Intelligence <span style="color: #88c4e8; padding: 0 5px;">|</span> 
+            &#9881; Software Development <span style="color: #88c4e8; padding: 0 5px;">|</span> 
+            &#9783; System Integration
+          </td>
         </tr>
       </table>
 
@@ -286,7 +286,7 @@
             JAIPUR <span style="color: #38b6ff; padding: 0 8px;">|</span> 
             BENGALURU <span style="color: #38b6ff; padding: 0 8px;">|</span> 
             PATNA <span style="color: #38b6ff; padding: 0 8px;">|</span>
-	        LUDHIANA <span style="color: #38b6ff; padding: 0 8px;">|</span> 
+            Ludhiana <span style="color: #38b6ff; padding: 0 8px;">|</span> 
             SHIMLA
           </td>
         </tr>
@@ -341,11 +341,7 @@
   }
 
   function resetForm() {
-    document.getElementById('empName').value = 'Rajendra Ahirwar';
-    document.getElementById('empDesignation').value = 'Data Management Executive';
-    document.getElementById('empMobile').value = '6232946680';
-    document.getElementById('empEmail').value = 'rajendra.ahirwar@atishay.com';
-    document.getElementById('empWebsite').value = 'www.atishay.com';
+    document.getElementById('sigForm').reset();
     renderSignature();
   }
 
