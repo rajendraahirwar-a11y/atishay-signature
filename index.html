@@ -1,3 +1,8 @@
+Maine **"Copy HTML Code"** button aur uske function ko code se hata diya hai. Ab sirf **"Copy Formatted Signature"** button rahega.
+
+Neeche updated HTML code diya gaya hai:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,9 +191,6 @@
       <button type="button" class="btn-accent" onclick="copyFormattedSignature()">
         <span>📋</span> Copy Formatted Signature (For Gmail / Outlook)
       </button>
-      <button type="button" class="btn-secondary" onclick="copyHtmlSource()">
-        <span>💻</span> Copy HTML Code
-      </button>
     </div>
 
     <div class="instructions">
@@ -334,12 +336,6 @@
     notify('✅ Signature Copied! Ab Gmail me jaakar Paste (Ctrl+V) karein.');
   }
 
-  function copyHtmlSource() {
-    navigator.clipboard.writeText(getSignatureHtml()).then(() => {
-      notify('✅ Raw HTML Code clipboard me copy ho gaya!');
-    });
-  }
-
   function resetForm() {
     document.getElementById('sigForm').reset();
     renderSignature();
@@ -349,3 +345,4 @@
 </script>
 </body>
 </html>
+```
